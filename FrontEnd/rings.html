@@ -18,7 +18,7 @@
   <!--Overlay-Header-->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('LayoutVorlage.html')
+      fetch('layout.html')
         .then(response => response.text())
         .then(data => {
           document.querySelector('overlay').innerHTML = data;
@@ -33,22 +33,22 @@
   <overlay>
 
   </overlay>
-  <!--Overlay Script-->
+  <!--Responsive Cards-->
 
-
-  <div class="row justify-content-center">
-    <div class="col-3">
-      <div class="card h-100">
-        <img src="./Image/GoldRinge.jpg" width="90" height="350"class="card-img-top" alt="...">
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-12 col-lg-4 m-1 d-flex justify-content-center">
+      <div class="card" style="width: 30rem;">
+        <img src="./Image/GoldRinge.jpg" width="90" height="350" class="card-img-top" alt="Collection of gold rings with different stones">
         <div class="card-body">
           <h5 class="card-title">Collection of gold rings</h5>
           <p class="card-text">Introducing our exclusive collection of gold rings, featuring a wide variety of precious stones for you to choose from. Each ring is crafted with the highest quality silver, adding a touch of elegance and sophistication to any outfit. With a selection of vibrant gemstones to choose from. You are sure to find the perfect ring to suit your personal style. Whether you're looking for a special gift or a treat for yourself, our silver ring collection has something for everyone.</p>
         </div>
       </div>
     </div>
-    <div class="col-3">
-      <div class="card h-100">
-        <img src="./Image/Ring2.jpg" width="90" height="350" class="card-img-top" alt="...">
+    <div class="col-12 col-lg-4 m-1 d-flex justify-content-center">
+      <div class="card" style="width: 30rem;">
+        <img src="./Image/Ring2.jpg"  width="90" height="350" class="card-img-top" alt="Collection of silver rings with different stones">
         <div class="card-body">
           <h5 class="card-title">Collection of rings with different stones</h5>
           <p class="card-text">Introducing our exclusive collection of silver rings, featuring a wide variety of precious stones for you to choose from. Each ring is crafted with the highest quality silver, adding a touch of elegance and sophistication to any outfit. With a selection of vibrant gemstones to choose from. You are sure to find the perfect ring to suit your personal style. Whether you're looking for a special gift or a treat for yourself, our silver ring collection has something for everyone.</p>
@@ -56,5 +56,7 @@
       </div>
     </div>
   </div>
+</div>
+
 </body>
 </html>

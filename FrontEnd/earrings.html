@@ -18,7 +18,7 @@
   <!--Overlay-Header-->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('LayoutVorlage.html')
+      fetch('layout.html')
         .then(response => response.text())
         .then(data => {
           document.querySelector('overlay').innerHTML = data;
@@ -33,27 +33,30 @@
   <overlay>
 
   </overlay>
-  <!--Overlay Script-->
-  <div class="row justify-content-center">
-    <div class="col-3">
-      <div class="card h-100">
-        <img src="./Image/HolzOhrringe.jpg" width="90" height="350"class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Silver earrings with wood charm </h5>
-          <p class="card-text">These silver earrings feature unique wooden pendants, adding a touch of natural charm to any outfit. The warm tones of the wood contrast beautifully with the cool silver, creating a rustic yet elegant look. The wooden pendants are handcrafted, making each pair of earrings one-of-a-kind. The natural pattern and grain of the wood add a unique character to the earrings. These earrings are perfect for adding a touch of earthy elegance to any outfit, and they are a great way to show your love for nature and sustainable fashion.</p>
+  
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-12 col-lg-4 m-1 d-flex justify-content-center">
+        <div class="card" style="width: 30rem;">
+          <img src="./Image/HolzOhrringe.jpg" width="90" height="350" class="card-img-top" alt="Silver earrings with two wooden charms">
+          <div class="card-body">
+            <h5 class="card-title">Silver earrings with wood charm</h5>
+            <p class="card-text">Introducing our exclusive collection of gold rings, featuring a wide variety of precious stones for you to choose from. Each ring is crafted with the highest quality silver, adding a touch of elegance and sophistication to any outfit. With a selection of vibrant gemstones to choose from. You are sure to find the perfect ring to suit your personal style. Whether you're looking for a special gift or a treat for yourself, our silver ring collection has something for everyone.</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-3">
-      <div class="card h-100">
-        <img src="./Image/OhrringeSchwarz.jpg" width="90" height="350" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Obsidian silver earrings</h5>
-          <p class="card-text">These silver earrings are adorned with striking obsidian pendants. The deep black color of the obsidian is set off by the gleaming silver, creating a bold and sophisticated look. The natural beauty of the obsidian is highlighted by the unique cut and shape of the pendants, making these earrings truly one-of-a-kind. The perfect accessory for adding a touch of drama to any outfit, these earrings are sure to turn heads.</p>
+      <div class="col-12 col-lg-4 m-1 d-flex justify-content-center">
+        <div class="card" style="width: 30rem;">
+          <img src="./Image/OhrringeSchwarz.jpg"  width="90" height="350" class="card-img-top" alt="Silver earrings with two black obsidian stones">
+          <div class="card-body">
+            <h5 class="card-title">Obsidian silver earrings</h5>
+            <p class="card-text">These silver earrings are adorned with striking obsidian pendants. The deep black color of the obsidian is set off by the gleaming silver, creating a bold and sophisticated look. The natural beauty of the obsidian is highlighted by the unique cut and shape of the pendants, making these earrings truly one-of-a-kind. The perfect accessory for adding a touch of drama to any outfit, these earrings are sure to turn heads.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  
 </body>
 </html>
 </body>
