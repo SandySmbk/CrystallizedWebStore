@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity(name="product")
 public class Product {
@@ -24,6 +26,11 @@ public class Product {
     private int quantity;
     @Column(name="type")
     private String type;
+
+    private boolean active;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "taxRateId", nullable = false)
+    private TaxRate taxRate;
 
 
     public Product() {
@@ -100,6 +107,20 @@ public class Product {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    public TaxRate getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(TaxRate taxRate) {
+        this.taxRate = taxRate;
     }
     
 }

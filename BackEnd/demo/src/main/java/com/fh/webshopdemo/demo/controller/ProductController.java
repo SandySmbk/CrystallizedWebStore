@@ -17,12 +17,12 @@ public class ProductController {
     @Autowired
     private final ProductService productService;
 
-    public ProductController(ProductService productService){
+    public ProductController(ProductService productService){  //konstruktor
         this.productService = productService;
     }
-
+// @GetMapping-Annotation für alle GET-Requests auf diesem Pfad
     @GetMapping
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts(){    // Ruft die Liste aller Produkte vom ProductService auf
         return productService.getAllProducts();
     }
 

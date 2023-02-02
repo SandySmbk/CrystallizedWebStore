@@ -26,5 +26,25 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
+    public List<Product> findByType(String type) {
+        return productRepository.findByType(type);
+    }
+
+    public Product save(Product product) {
+        return productRepository.save(product);
+    } 
+
+    public Product setActive(Long id) {
+        var product = productRepository.findById(id);
+
+        if (product.isEmpty()) {
+            throw new EntityNotFoundException();
+        }
+
+        Product p = product.get();
+        p.setActive(true);
+        return save(p);
+    }
+
 
 }
