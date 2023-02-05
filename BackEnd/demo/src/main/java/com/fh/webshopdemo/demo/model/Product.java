@@ -4,35 +4,31 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
-@Entity(name="product")
+@Entity(name="product")  // um diese Klasse als JPA-Entität mit dem Namen product zu kennzeichnen
 public class Product {
     
-    @Id
-    @GeneratedValue
-    @Column(name="id")
+    @Id  // um das Primärschlüsselfeld anzugeben
+    @GeneratedValue  // um anzugeben, dass der Wert dieses Feldes automatisch generiert werden soll
+    @Column(name="id")  // Annotation, um den Namen der Spalte in der Tabelle anzugeben
     private final Long id;
-    @Column(name="name")
+    @Column(name="name")  
     private String name;
-    @Column(name="description")
+    @Column(name="description")  
     private String description;
-    @Column(name="image_url")
+    @Column(name="image_url")  
     private String imageUrl;
-    @Column(name="price")
+    @Column(name="price") 
     private double price;
-    @Column(name="quantity")
+    @Column(name="quantity")  
     private int quantity;
-    @Column(name="type")
+    @Column(name="type")  
     private String type;
 
-    private boolean active;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "taxRateId", nullable = false)
-    private TaxRate taxRate;
+    
 
 
+//constructor
     public Product() {
         this.id = null;
         this.name = null;
@@ -44,7 +40,7 @@ public class Product {
     }
     
 
-
+//constructor
     public Product(Long id, String name, String description, String imageUrl, double price, int quantity, String type) {
         this.id = id;
         this.name = name;
@@ -56,7 +52,7 @@ public class Product {
     }
 
 
-
+    // getter und setter
     public Long getId() {
         return id;
     }
@@ -107,20 +103,6 @@ public class Product {
 
     public void setType(String type) {
         this.type = type;
-    }
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-    public TaxRate getTaxRate() {
-        return taxRate;
-    }
-
-    public void setTaxRate(TaxRate taxRate) {
-        this.taxRate = taxRate;
     }
     
 }

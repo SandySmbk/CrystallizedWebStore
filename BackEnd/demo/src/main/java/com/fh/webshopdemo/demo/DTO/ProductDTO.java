@@ -1,4 +1,4 @@
-package com.fh.webshopdemo.demo.ProductDTO;
+package com.fh.webshopdemo.demo.DTO;
 
 public class ProductDTO {
 
@@ -9,8 +9,6 @@ public class ProductDTO {
     private double price;
     private int quantity;
     private String type;
-    private boolean active;
-    private Long taxRateId;
 
 
     public Long getId() {
@@ -69,19 +67,4 @@ public class ProductDTO {
         this.type = type;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Long getTaxRateId() {
-        return taxRateId;
-    }
-
-    public void setTaxRateId(Long taxRateId) {
-        this.taxRateId = taxRateId;
-    }
 }

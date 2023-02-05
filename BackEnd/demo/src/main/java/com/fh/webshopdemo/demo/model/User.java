@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 @Entity(name = "user")
 public class User {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
+    @Id// um das Primärschlüsselfeld anzugeben
+    @GeneratedValue  // um anzugeben, dass der Wert dieses Feldes automatisch generiert werden soll
+    @Column(name = "id") //um den Namen der Spalte in der Tabelle anzugeben
     private final Long id;
     @Column(name = "salutation")
     private String salutation;
@@ -33,6 +33,7 @@ public class User {
     @Column(name = "country")
     private String country;
 
+//Constructor
     public User(Long id, String salutation, String firstName, String lastName, String email, String password,
             String streetAdress, Long streetNumber, String city, Long postalCode, String country) {
         this.id = id;
@@ -47,7 +48,7 @@ public class User {
         this.postalCode = postalCode;
         this.country = country;
     }
-
+//getter und setter
     public String getSalutation() {
         return salutation;
     }

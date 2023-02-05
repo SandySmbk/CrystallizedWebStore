@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fh.webshopdemo.demo.model.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Long>{
+public interface ProductRepository extends JpaRepository<Product, Long>{ ///Erweiterung der JPA-Schnittstelle, um Zugriff auf Product-Objekte in der Datenbank zu ermöglichen
 
-    List<Product> findByType(String type);
+    List<Product> findByType(String type);  // Methode zum Suchen von Produkten nach Typ
 
 }
