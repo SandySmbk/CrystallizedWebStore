@@ -27,23 +27,5 @@ public class ProductController {
     public List<Product> findAllProductsByType(@PathVariable String type) {
         return service.findByType(type);
     }
-/* 
-    @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody ProductDTO productDTO) {
-        Product product = service.save(fromDTO(productDTO),productDTO);
-        return ResponseEntity.created(URI.create("http://localhost:8080/products")).body(product);
-    }
-
-
-    private static Product fromDTO(ProductDTO productDTO) {
-        return new Product(
-            productDTO.getId()
-                productDTO.getName(),
-                productDTO.getDescription(),
-                productDTO.getImageUrl(),
-                productDTO.getPrice(),
-                productDTO.getQuantity(),
-                productDTO.getType());
-    }*/
 
 }

@@ -8,6 +8,6 @@ import com.fh.webshopdemo.demo.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long>{ ///Erweiterung der JPA-Schnittstelle, um Zugriff auf Product-Objekte in der Datenbank zu ermöglichen
 
-    List<Product> findByType(String type);  // Methode zum Suchen von Produkten nach Typ
+    List<Product> findByType(String Type);  // Methode zum Suchen von Produkten nach typ
 
 }
