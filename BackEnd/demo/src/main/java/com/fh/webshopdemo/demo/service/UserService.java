@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.fh.webshopdemo.demo.model.User;
 import com.fh.webshopdemo.demo.repository.UserRepository;
@@ -26,11 +28,11 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public List<User> findByType(String type) {
-        return userRepository.findByType(type);
-    }
-
     public User save(User user) {
         return userRepository.save(user);
     } 
+    @PostMapping
+    public User createUser (@RequestBody User user) {
+        return userRepository.save(user);
+    }
 }

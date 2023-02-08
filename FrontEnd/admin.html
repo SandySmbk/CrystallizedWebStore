@@ -14,6 +14,10 @@
 
   <!--Eigenen Files-->
   <link rel="stylesheet" href="style.css">
+  <script defer src="admin.js"></script>
+
+  <!--Jquery Datenbank-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!--Overlay-Header-->
   <script>
@@ -36,37 +40,39 @@
     <h3 class="text-center">Create new product</h3>
     <div class="container">
         <div class="row mb-3">
+          <form method= "post" id="createProduct-form">
           <div class="col">
-            <label for="exampleFormControlInput1" class="form-label">Product description</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <label for="inputProductTitel" class="form-label">Product titel</label>
+            <input type="text" class="form-control" id="inputProductTitel" placeholder="">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <label for="exampleFormControlInput1" class="form-label">Product description</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <label for="inputProductDescription" class="form-label">Product description</label>
+            <input type="text" class="form-control" id="inputProductDescription" placeholder="">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <label for="input-price" class="form-label">Price</label>
+            <label for="inputProductPrice" class="form-label">Price</label>
             <div class="input-group">
               <span class="input-group-text">€</span>
               <span class="input-group-text">0.00</span>
-              <input type="text" class="form-control" id="input-price" aria-label="Dollar amount (with dot and two decimal places)">
+              <input type="text" class="form-control" id="inputProductPrice" aria-label="Dollar amount (with dot and two decimal places)">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col mb-3">
-            <label for="formFile" class="form-label">File</label>
-            <input class="form-control" type="file" id="formFile">          
+            <label for="inputProductFile" class="form-label">File</label>
+            <input class="form-control" type="file" id="inputProductFile">          
           </div>
         </div>
         <div class="row">
           <div class="col">
             <button type="submit" class="btn bg-dark text-white mt-3" >Commit</button>
           </div>
+        </form>
         </div>
     </div>
   </div>

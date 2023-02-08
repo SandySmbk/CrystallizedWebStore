@@ -14,6 +14,10 @@
 
   <!--Eigenen Files-->
   <link rel="stylesheet" href="style.css">
+  <script src="registration.js" defer></script>
+
+  <!--Jquery Datenbank-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!--Overlay-Header-->
   <script>
@@ -39,7 +43,7 @@
             <h2>New registration</h2>
           </div>
         </div>
-        <from>
+        <form method="post" id="createUser-form">
           <div class="row row-cols-1">
             <div class="col">
               <div class="form-group mt-2">
@@ -114,7 +118,6 @@
               <button type="submit" class="btn bg-dark text-white mt-3">Registration</button>
             </div>
           </div>
-      </div>
       </form>
     </div>
   </div>

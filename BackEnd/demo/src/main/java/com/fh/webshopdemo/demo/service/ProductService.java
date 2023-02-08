@@ -3,6 +3,9 @@ package com.fh.webshopdemo.demo.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.fh.webshopdemo.demo.model.Product;
 import com.fh.webshopdemo.demo.repository.ProductRepository;
 
@@ -24,6 +27,10 @@ public class ProductService {
     }
 
     public Product save(Product product) {
+        return productRepository.save(product);
+    }
+    @PostMapping
+    public Product createProduct (@RequestBody Product product) {
         return productRepository.save(product);
     }
 
