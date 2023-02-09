@@ -28,7 +28,7 @@ public class Product {
     
 
 
-//constructor
+//default constructor
     public Product() {
         this.id = null;
         this.name = null;

@@ -14,119 +14,136 @@ public class User {
     private final Long id;
     @Column(name = "salutation")
     private String salutation;
-    @Column(name = "firstName")
-    private String firstName;
-    @Column(name = "lastName")
-    private String lastName;
+    @Column(name = "first_name")
+    private String first_name;
+    @Column(name = "last_name")
+    private String last_name;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "streetAdress")
-    private String streetAdress;
-    @Column(name = "streetNumber")
-    private Long streetNumber;
+    @Column(name = "street_adress")
+    private String street_adress;
+    @Column(name = "street_number")
+    private Long street_number;
     @Column(name = "city")
     private String city;
-    @Column(name = "postalCode")
-    private Long postalCode;
+    @Column(name = "postal_code")
+    private Long postal_code;
     @Column(name = "country")
     private String country;
 
-//Constructor
-    public User(Long id, String salutation, String firstName, String lastName, String email, String password,
-            String streetAdress, Long streetNumber, String city, Long postalCode, String country) {
+
+    //Constructor
+    public User(Long id, String salutation, String first_name, String last_name, String email, String password,
+            String street_adress, Long street_number, String city, Long postal_code, String country) {
         this.id = id;
         this.salutation = salutation;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
         this.password = password;
-        this.streetAdress = streetAdress;
-        this.streetNumber = streetNumber;
+        this.street_adress = street_adress;
+        this.street_number = street_number;
         this.city = city;
-        this.postalCode = postalCode;
+        this.postal_code = postal_code;
         this.country = country;
     }
+
+    //default Constructor
+    public User() {
+        this.id = null;
+        this.salutation = null;
+        this.first_name = null;
+        this.last_name = null;
+        this.email = null;
+        this.password = null;
+        this.street_adress = null;
+        this.street_number = null;
+        this.city = null;
+        this.postal_code = null;
+        this.country = null;
+    }
+    
 //getter und setter
-    public String getSalutation() {
-        return salutation;
-    }
+public String getSalutation() {
+    return salutation;
+}
 
-    public void setSalutation(String salutation) {
-        this.salutation = salutation;
-    }
+public void setSalutation(String salutation) {
+    this.salutation = salutation;
+}
 
-    public String getFirstName() {
-        return firstName;
-    }
+public String getFirst_name() {
+    return first_name;
+}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+public void setFirst_name(String first_name) {
+    this.first_name = first_name;
+}
 
-    public String getLastName() {
-        return lastName;
-    }
+public String getLast_name() {
+    return last_name;
+}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+public void setLast_name(String last_name) {
+    this.last_name = last_name;
+}
 
-    public String getEmail() {
-        return email;
-    }
+public String getEmail() {
+    return email;
+}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+public void setEmail(String email) {
+    this.email = email;
+}
 
-    public String getPassword() {
-        return password;
-    }
+public String getPassword() {
+    return password;
+}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+public void setPassword(String password) {
+    this.password = password;
+}
 
-    public String getStreetAdress() {
-        return streetAdress;
-    }
+public String getStreet_adress() {
+    return street_adress;
+}
 
-    public void setStreetAdress(String streetAdress) {
-        this.streetAdress = streetAdress;
-    }
+public void setStreet_adress(String street_adress) {
+    this.street_adress = street_adress;
+}
 
-    public Long getStreetNumber() {
-        return streetNumber;
-    }
+public Long getStreet_number() {
+    return street_number;
+}
 
-    public void setStreetNumber(Long streetNumber) {
-        this.streetNumber = streetNumber;
-    }
+public void setStreet_number(Long street_number) {
+    this.street_number = street_number;
+}
 
-    public String getCity() {
-        return city;
-    }
+public String getCity() {
+    return city;
+}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+public void setCity(String city) {
+    this.city = city;
+}
 
-    public Long getPostalCode() {
-        return postalCode;
-    }
+public Long getPostal_code() {
+    return postal_code;
+}
 
-    public void setPostalCode(Long postalCode) {
-        this.postalCode = postalCode;
-    }
+public void setPostal_code(Long postal_code) {
+    this.postal_code = postal_code;
+}
 
-    public String getCountry() {
-        return country;
-    }
+public String getCountry() {
+    return country;
+}
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+public void setCountry(String country) {
+    this.country = country;
+}
 
 }

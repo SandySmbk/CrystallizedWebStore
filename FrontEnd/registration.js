@@ -16,19 +16,19 @@ document.getElementById("createUser-form").addEventListener("submit", function(e
 
     $.ajax({
         url: 'http://localhost:8080/user',
-        method: 'POST',
+        method: 'post',
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify ({
 
-            firstName: document.querySelector("#inputFirstName").value,
-            lastName: document.querySelector("#inputLastName").value,
+            first_name: document.querySelector("#inputFirstName").value,
+            last_name: document.querySelector("#inputLastName").value,
             email: document.querySelector("#inputEmail").value,
             password: document.querySelector("#inputPassword").value,
-            streetAdress: document.querySelector("#inputStreetAdress").value,
-            streetNumber: document.querySelector("#StreetNumber").value,
+            street_adress: document.querySelector("#inputStreetAdress").value,
+            street_number: document.querySelector("#StreetNumber").value,
             city: document.querySelector("#City").value,
-            postalCode: document.querySelector("#PostalCode").value,
+            postal_code: document.querySelector("#PostalCode").value,
             country: document.querySelector("#Country").value
             
         }), 
