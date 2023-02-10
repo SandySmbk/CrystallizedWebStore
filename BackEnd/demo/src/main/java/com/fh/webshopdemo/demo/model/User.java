@@ -1,5 +1,7 @@
 package com.fh.webshopdemo.demo.model;
 
+import javax.validation.constraints.NotBlank;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,22 +16,40 @@ public class User {
     private final Long id;
     @Column(name = "salutation")
     private String salutation;
+
+    @NotBlank(message="first name is a mandatory field")
     @Column(name = "first_name")
     private String first_name;
+
+    @NotBlank(message="last name is a mandatory field")
     @Column(name = "last_name")
     private String last_name;
+
+    @NotBlank(message="email is a mandatory field")
     @Column(name = "email")
     private String email;
+
+    @NotBlank(message="password is a mandatory field")
     @Column(name = "password")
     private String password;
+
+    @NotBlank(message="street adress is a mandatory field")
     @Column(name = "street_adress")
     private String street_adress;
+
+    @NotBlank(message="street number is a mandatory field")
     @Column(name = "street_number")
     private Long street_number;
+
+    @NotBlank(message="city is a mandatory field")
     @Column(name = "city")
     private String city;
+
+    @NotBlank(message="postal code is a mandatory field")
     @Column(name = "postal_code")
     private Long postal_code;
+
+    @NotBlank(message="country is a mandatory field")
     @Column(name = "country")
     private String country;
 

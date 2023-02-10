@@ -1,5 +1,7 @@
 package com.fh.webshopdemo.demo.controller;
 import java.util.List;
+
+import com.fh.webshopdemo.demo.dtos.ProductDTO;
 import com.fh.webshopdemo.demo.model.Product;
 import com.fh.webshopdemo.demo.service.ProductService;
 
@@ -31,8 +33,20 @@ public class ProductController {
         return productService.findByType(type);
     }
     @PostMapping 
-    public Product createProduct(@RequestBody Product product){
-        return productService.createProduct(product);
-    }
+    public Product createProduct(@RequestBody ProductDTO productDto){
+    Product product = mapProductDTOToProduct(productDto); 
+    return productService.createProduct(product);
+}
+
+private Product mapProductDTOToProduct(ProductDTO productDto){
+    Product product = new Product();
+    product.setName(productDto.getName());
+    product.setDescription(productDto.getDescription());
+    product.setImageUrl(productDto.getImageUrl());
+    product.setPrice(productDto.getPrice());
+    product.setQuantity(productDto.getQuantity());
+    product.setType(productDto.getType());
+    return product;
+}
 
 }

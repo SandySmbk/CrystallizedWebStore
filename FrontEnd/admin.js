@@ -28,3 +28,4 @@ document.getElementById("createProduct-form").addEventListener("submit", functio
         error: function (error){console.log(error)}
     });
 });
+

@@ -1,5 +1,10 @@
 package com.fh.webshopdemo.demo.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,20 +17,33 @@ public class Product {
     @GeneratedValue  // um anzugeben, dass der Wert dieses Feldes automatisch generiert werden soll
     @Column(name="id")  // Annotation, um den Namen der Spalte in der Tabelle anzugeben
     private final Long id;
+    
+    @NotBlank(message="name is a mandatory field") //Validation
     @Column(name="name")  
     private String name;
+    
+    @NotBlank(message="description is a mandatory field")
     @Column(name="description")  
     private String description;
+    
+    @NotBlank(message="image-URL is a mandatory field")
     @Column(name="image_url")  
     private String imageUrl;
+    
+    //@NotNull(message="price is a mandatory field")
+    @PositiveOrZero(message="price has to be positive or zero")
     @Column(name="price") 
     private double price;
+    
+    //@NotNull(message="quantity is a mandatory")
+    @Min(value=0, message="quantity has to be zero or bigger")
     @Column(name="quantity")  
     private int quantity;
+    
+    @NotBlank(message="type is a mandatory field")
     @Column(name="type")  
     private String type;
 
-    
 
 
 //default constructor
