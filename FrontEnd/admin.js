@@ -5,6 +5,8 @@ document.getElementById("createProduct-form").addEventListener("submit", functio
     formData.append("inputProductTitel", document.querySelector("#inputProductTitel").value);
     formData.append("inputProductDescription", document.querySelector("#inputProductDescription").value);
     formData.append("inputProductPrice", document.querySelector("#inputProductPrice").value);
+    formData.append("inputProductQuantity", document.querySelector("#inputProductQuantity").value);
+    formData.append("inputProductType", document.querySelector("#inputProductType").value);
     formData.append("inputProductFile", document.querySelector("#inputProductFile").files[0]);
     
 
@@ -17,6 +19,8 @@ document.getElementById("createProduct-form").addEventListener("submit", functio
             name: document.querySelector("#inputProductTitel").value,
             description: document.querySelector("#inputProductDescription").value,
             price: document.querySelector("#inputProductPrice").value,
+            quantity: document.querySelector("#inputProductQuantity").value,
+            type: document.querySelector("#inputProductType").value,
             imageUrl: document.querySelector("#inputProductFile").value,
             
         }), 
@@ -24,9 +28,3 @@ document.getElementById("createProduct-form").addEventListener("submit", functio
         error: function (error){console.log(error)}
     });
 });
-
-/*private double price;
-@Column(name="quantity")  
-private int quantity;
-@Column(name="type")  
-private String type; */

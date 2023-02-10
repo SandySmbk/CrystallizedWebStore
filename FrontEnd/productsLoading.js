@@ -7,7 +7,7 @@ function createProduct(product) {
     //card element
     const card = $(`<div class="card border border-light text-black p-3" style="width: 20rem;"></div>`);
     //image element
-    const image = $(`<img class="card-img-top border border-light rounded" height="250" src="${product.imageUrl}">`);
+    //const image = $(`<img class="card-img-top border border-light rounded" height="250" src="${product.imageUrl}">`);
     //card body element
     const cardBody = $(`<div class="card-body border rounded mt-1"></div>`);
     //name element
