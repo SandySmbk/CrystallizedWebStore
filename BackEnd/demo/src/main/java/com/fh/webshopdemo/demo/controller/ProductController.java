@@ -84,3 +84,4 @@ public List<Product> searchProducts(@PathVariable String name) {
     }
 
 }
+
