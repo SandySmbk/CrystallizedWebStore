@@ -6,8 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fh.webshopdemo.demo.model.Product;
 
+// um den Zugriff auf Daten zu verwalten, die in einer Datenbank oder einem anderen Datenspeicher gespeichert sind.
+
 public interface ProductRepository extends JpaRepository<Product, Long>{ ///Erweiterung der JPA-Schnittstelle, um Zugriff auf Product-Objekte in der Datenbank zu ermöglichen
 
-    List<Product> findByType(String Type);  // Methode zum Suchen von Produkten nach typ
+    List<Product> searchByName(String name);
 
 }

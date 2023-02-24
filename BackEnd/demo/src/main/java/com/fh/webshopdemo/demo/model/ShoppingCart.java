@@ -1,4 +1,4 @@
-/*package com.fh.webshopdemo.demo.model;
+package com.fh.webshopdemo.demo.model;
 
 import java.util.Set;
 
@@ -20,17 +20,23 @@ public class ShoppingCart {
     @Column(name = "id")
     private Long id;
     
-    @ManyToOne //Beziehung zwischen der Shoppingcart-Klasse und anderen Klassen beschreiben,viele-zu-eins Beziehung zwischen der Shoppingcart-Klasse und der User-Klasse, d.h. jeder Warenkorb gehört zu genau einem Benutzer
-    @JsonBackReference // verhindert, dass die Positionen in einer unendlichen Rekursion zurückgegeben werden, wenn sie als JSON serialisiert werden
-    @JoinColumn(name = "user_id", nullable = true) //Spalte die verwendet wird
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
-    @OneToMany(mappedBy = "shoppingCart") //eins-zu-viele Beziehung zwischen der Cart-Klasse und der Product-Klasse, d.h. jeder Warenkorb kann mehrere Products haben
-    private Set<Product> products; //beschreibt Beziehung zu anderen Klassen
-//constructor
+    @OneToMany(mappedBy = "shoppingCart")
+    private Set<Product> products;
+    
 
+    public ShoppingCart() {
+    }
 
-//getter und setter
+    public ShoppingCart(User user, Set<Product> products) {
+        this.user = user;
+        this.products = products;
+    }
+
     public Long getId() {
         return id;
     }
@@ -55,4 +61,5 @@ public class ShoppingCart {
         this.products = products;
     }
 }
-    */
+
+    

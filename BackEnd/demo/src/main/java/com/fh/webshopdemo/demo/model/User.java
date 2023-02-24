@@ -1,11 +1,20 @@
 package com.fh.webshopdemo.demo.model;
 
+import java.util.Set;
 import javax.validation.constraints.NotBlank;
+
+import com.fh.webshopdemo.demo.security.Organization;
+import com.fh.webshopdemo.demo.security.Privilege;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity(name = "user")
 public class User {
@@ -53,10 +62,26 @@ public class User {
     @Column(name = "country")
     private String country;
 
+    @NotBlank(message="username is a mandatory field")
+    @Column(name = "username")
+    private String username;
+    
+    @ManyToMany(fetch = FetchType.EAGER) 
+    @JoinTable(name = "users_privileges", 
+      joinColumns = @JoinColumn(name = "user_id",
+                    referencedColumnName = "id"),
+      inverseJoinColumns = 
+        @JoinColumn(name = "privilege_id", referencedColumnName = "id")) 
+    private Set<Privilege> privileges;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "organization_id", referencedColumnName = "id")
+    private Organization organization;
+
+    
     //Constructor
     public User(Long id, String salutation, String first_name, String last_name, String email, String password,
-            String street_adress, Long street_number, String city, Long postal_code, String country) {
+    String street_adress, Long street_number, String city, Long postal_code, String country) {
         this.id = id;
         this.salutation = salutation;
         this.first_name = first_name;
@@ -69,7 +94,7 @@ public class User {
         this.postal_code = postal_code;
         this.country = country;
     }
-
+    
     //default Constructor
     public User() {
         this.id = null;
@@ -165,5 +190,26 @@ public String getCountry() {
 public void setCountry(String country) {
     this.country = country;
 }
+public Set<Privilege> getPrivileges() {
+    return privileges;
+}
 
+public void setPrivileges(Set<Privilege> privileges) {
+    this.privileges = privileges;
+}
+
+public Organization getOrganization() {
+    return organization;
+}
+
+public void setOrganization(Organization organization) {
+    this.organization = organization;
+}
+public String getUsername() {
+    return username;
+}
+
+public void setUsername(String username) {
+    this.username = username;
+}
 }

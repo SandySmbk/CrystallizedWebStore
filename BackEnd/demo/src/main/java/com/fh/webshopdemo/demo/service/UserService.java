@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -35,4 +36,23 @@ public class UserService {
     public User createUser (@RequestBody User user) {
         return userRepository.save(user);
     }
+    @PostMapping("/update")
+    public User updateUser (@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    @PostMapping("/{id}")
+    public void deleteUserById(@PathVariable Long id) {
+        userRepository.deleteById(id);
+    }
+
+    public void deleteUser(long id) {
+        userRepository.deleteById(id);
+    }
+
+    
+
+
+
+
 }

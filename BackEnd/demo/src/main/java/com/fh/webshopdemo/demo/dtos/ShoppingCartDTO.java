@@ -1,4 +1,4 @@
-/*package com.fh.webshopdemo.demo.dtos;
+package com.fh.webshopdemo.demo.dtos;
 
 import java.util.Set;
 
@@ -33,4 +33,3 @@ public class ShoppingCartDTO {
         this.products = products;
     }
 }
-*/

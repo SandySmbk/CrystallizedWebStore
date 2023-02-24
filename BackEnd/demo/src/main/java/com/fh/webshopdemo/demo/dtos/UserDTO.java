@@ -1,15 +1,46 @@
 package com.fh.webshopdemo.demo.dtos;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class UserDTO {
     private Long id;
+
+    @NotBlank(message = "First name is a mandatory field")
+    @Size(max = 50, message = "First name must be less than or equal to 50 characters")
     private String first_name;
+
+    @NotBlank(message = "Last name is a mandatory field")
+    @Size(max = 50, message = "Last name must be less than or equal to 50 characters")
     private String last_name;
+
+    @NotBlank(message = "Email is a mandatory field")
+    @Size(max = 50, message = "Email must be less than or equal to 50 characters")
+    @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "Invalid email format")
     private String email;
+
+    @NotBlank(message = "Password is a mandatory field")
+    @Size(max = 50, message = "Password must be less than or equal to 50 characters")
     private String password;
+
+    @NotBlank(message = "Street address is a mandatory field")
+    @Size(max = 50, message = "Street address must be less than or equal to 50 characters")
     private String street_adress;
+
+    @NotNull(message = "Street number is a mandatory field")
     private Long street_number;
+
+    @NotBlank(message = "City is a mandatory field")
+    @Size(max = 50, message = "City must be less than or equal to 50 characters")
     private String city;
+
+    @NotNull(message = "Postal code is a mandatory field")
     private Long postal_code;
+
+    @NotBlank(message = "Country is a mandatory field")
+    @Size(max = 50, message = "Country must be less than or equal to 50 characters")
     private String country;
 
 

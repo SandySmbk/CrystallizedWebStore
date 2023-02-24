@@ -15,7 +15,7 @@ document.getElementById("createUser-form").addEventListener("submit", function(e
     
 
     $.ajax({
-        url: 'http://localhost:8080/user',
+        url: 'http://localhost:8080/api/users',
         method: 'post',
         dataType: 'json',
         contentType: 'application/json',

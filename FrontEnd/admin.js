@@ -11,7 +11,7 @@ document.getElementById("createProduct-form").addEventListener("submit", functio
     
 
     $.ajax ( {
-        url: 'http://localhost:8080/products',
+        url: 'http://localhost:8080/api/products',
         method: 'post',
         dataType: 'json',
         contentType: 'application/json',

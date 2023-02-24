@@ -2,13 +2,16 @@ package com.fh.webshopdemo.demo.model;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+//Das Model enthält die eigentlichen Daten, die von der Anwendung verarbeitet werden, 
+//und es wird normalerweise verwendet, um die Daten aus der Datenbank abzurufen oder um sie in der Datenbank zu speichern.
+import jakarta.persistence.ManyToOne;
 
 @Entity(name="product")  // um diese Klasse als JPA-Entität mit dem Namen product zu kennzeichnen
 public class Product {
@@ -16,7 +19,7 @@ public class Product {
     @Id  // um das Primärschlüsselfeld anzugeben
     @GeneratedValue  // um anzugeben, dass der Wert dieses Feldes automatisch generiert werden soll
     @Column(name="id")  // Annotation, um den Namen der Spalte in der Tabelle anzugeben
-    private final Long id;
+    private Long id;
     
     @NotBlank(message="name is a mandatory field") //Validation
     @Column(name="name")  
@@ -43,10 +46,15 @@ public class Product {
     @NotBlank(message="type is a mandatory field")
     @Column(name="type")  
     private String type;
+    
+    @ManyToOne
+    @JoinColumn(name = "shopping_cart_id")
+    private ShoppingCart shoppingCart;
 
 
-
-//default constructor
+    
+    
+    //default constructor
     public Product() {
         this.id = null;
         this.name = null;
@@ -69,7 +77,7 @@ public class Product {
         this.type = type;
     }
 
-
+    
     // getter und setter
     public Long getId() {
         return id;
@@ -122,5 +130,17 @@ public class Product {
     public void setType(String type) {
         this.type = type;
     }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public ShoppingCart getShoppingCart() {
+            return shoppingCart;
+        }
+    
+    
+        public void setShoppingCart(ShoppingCart shoppingCart) {
+            this.shoppingCart = shoppingCart;
+        }
     
 }
